@@ -14,9 +14,8 @@ function sidebarComp() {
         li.appendChild(liButton);
         list.appendChild(li);
     });
-    sidebar.appendChild(list); 
-
- 
+    sidebar.appendChild(list);  
+    
     return sidebar;
 }
 
