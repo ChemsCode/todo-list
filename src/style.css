@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'myFont';
+    src: url('./Bungee-Regular.ttf') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+#content{
+    height: 100%; 
+    margin: 0;
+}
+
+#container{
+    min-height: 100%; 
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    grid-template-columns: 2fr 10fr;
+}
+
+/*navbar styling*/
+
+.navbar{
+    grid-column: 1 / 3;
+    font-family: 'myFont';
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    background-color: rgb(150, 150, 150);
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*sidebar styling*/
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(172, 172, 172);
+}
+
+.sidebar ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+
+}
+
+.sidebar ul button{
+    background: rgba(0, 0, 0, 0.1); /* black background with 0.1 opacity */
+    border: none;
+    color: white;
+    padding: 1vw 10vh;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+
+/*main section styling*/
+
+.main{
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+}
+
+.main button{
+    background: rgba(0, 0, 0, 0.1); /* black background with 0.1 opacity */
+    border: none;
+    padding: 1vw 10vh;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
