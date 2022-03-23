@@ -15,7 +15,7 @@ class Todo{
         this.#notes = notes;
     }
     //getters
-    get geTitle() {
+    get getTitle() {
       return this.#title;
     }
     get getDescription() {
@@ -39,4 +39,30 @@ class Todo{
 
 }
 
-export {Todo};
+//the TodoStorage class is basically like a project class which will hold the entirity of a Todo
+class TodoStorage {
+    storage = new Array();
+    #projectName;
+    constructor(projetctName){
+        this.#projectName = projetctName;
+    }
+
+    get getProjectName() {
+        return this.#projectName;
+    }
+
+    set setProjectName(projectName) {this.#projectName = projectName;}
+
+    //method to add a todo
+    addTodo(title, description, dueDate, priority, notes){
+        this.storage.push(new Todo(title, description, dueDate, priority, notes));
+    }
+
+    //method to remove a todo
+    removeTodo(index){
+        this.storage.splice(index, 1);
+    }
+
+}
+
+export {TodoStorage};

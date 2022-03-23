@@ -3,7 +3,7 @@ function sidebarComp() {
     const sidebar = document.createElement('div');
     sidebar.classList.add("sidebar");
     const list = document.createElement('ul');
-    let data = ["Tasks", "Projects"]
+    let data = ["Demo", "Projects"]
 
 
     data.forEach((item) => {
