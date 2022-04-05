@@ -9,6 +9,11 @@ function sidebarComp() {
     title.innerHTML = "Projects";
     sidebar.appendChild(title)
 
+    //creating project list
+    const projectList = document.createElement('ul');
+    projectList.setAttribute('id', 'project-list');
+    sidebar.appendChild(projectList)
+
     //creating Buttons
     const list = document.createElement('ul');
     let data = ["+"]

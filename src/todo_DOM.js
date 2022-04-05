@@ -1,8 +1,12 @@
-import {allProjects} from "./todos.js"
+import {allProjects} from "./todoClasses.js"
+import {addProjectDOM} from './DOMFunctionality'
+//opens the form for classes
 
 function openForm() {
     document.getElementById("popupForm").style.display = "block";
 }
+
+//adds the project to the list
 
 function addProject(){
     const project_title = document.getElementById("project_name").value;
@@ -12,6 +16,8 @@ function addProject(){
 
     allProjects.addNewProject(project_title, project_desc);
     allProjects.printInfo();
+
+    addProjectDOM(project_title);
 
     closeForm();
 }

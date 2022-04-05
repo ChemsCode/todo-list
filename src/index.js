@@ -1,7 +1,7 @@
 import './style.css'
-import { sidebarComp } from './assets/sidebar';
-import {openForm, addProject} from './todo_DOM';
-import {popupFormComp} from './assets/popupForm'
+import { sidebarComp } from './components/sidebar';
+import {openForm} from './todo_DOM';
+import {popupFormComp} from './components/popupForm'
 
 function component() {
     const element = document.createElement('div');
