@@ -39,19 +39,27 @@ class Todo{
 
 }
 
-//the TodoStorage class is basically like a project class which will hold the entirity of a Todo
-class TodoStorage {
+//the a project class which will hold the entirity of a Todo for a particular project
+class Project {
     storage = new Array();
     #projectName;
-    constructor(projetctName){
+    #projectDescription
+    constructor(projetctName,projectDescription){
         this.#projectName = projetctName;
+        this.#projectDescription = projectDescription;
     }
 
     get getProjectName() {
         return this.#projectName;
     }
 
+    get getProjectDescription(){
+      return this.#projectDescription;
+    }
+
     set setProjectName(projectName) {this.#projectName = projectName;}
+
+    set setProjectName(projectDescription) {this.#projectDescription = projectDescription;}
 
     //method to add a todo
     addTodo(title, description, dueDate, priority, notes){
@@ -65,4 +73,40 @@ class TodoStorage {
 
 }
 
-export {TodoStorage};
+
+class ProjectStorage{
+  projectArr = new Array();
+  constructor(){}
+
+  addNewProject = (projectName, projectDescription) =>{
+    this.projectArr.push(new Project(projectName, projectDescription))
+  }
+
+  removeProject = (index) =>{
+    this.projectArr.splice(index, 1)
+  }
+
+  printInfo = () =>{
+    console.log(this.projectArr);
+  }
+}
+
+let allProjects = new ProjectStorage();
+
+// const ProjectStorage = (() => {
+//   let projectArr = new Array();
+
+//   const addNewProject = (projectName, projectDescription) =>{
+//     projectArr.push(new Project(projectName, projectDescription))
+//   }
+
+//   const removeProject = (index) =>{
+//     projectArr.splice(index, 1)
+//   }
+
+//   const printInfo = () =>{
+//     console.log(projectArr);
+//   }
+// })();
+
+export {allProjects};

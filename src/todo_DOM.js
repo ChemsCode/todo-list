@@ -1,17 +1,28 @@
-import { TodoStorage } from "./todos";
-import { mainComp} from "./main";
+import {allProjects} from "./todos.js"
 
-//idk if im gonna keep this chunk of code here
-//remember every class/function should only be doing one thing
-//everything needs to be the most modular possible
-//separate the DOM from the actual logic of implementing the todos.
-
-function DOM_sidebar(name){
-    document.getElementById("Demo").addEventListener("click", () => {
-    console.log("in Demo")
-    document.getElementById("container").appendChild(mainComp(name));
-    // document.getElementsByClassName("main")[0].remove();
-});
+function openForm() {
+    document.getElementById("popupForm").style.display = "block";
 }
 
-export {DOM_sidebar};
+function addProject(){
+    const project_title = document.getElementById("project_name").value;
+    const project_desc = document.getElementById("project_description").value;
+
+    console.log(project_title  + " " + project_desc);
+
+    allProjects.addNewProject(project_title, project_desc);
+    allProjects.printInfo();
+
+    closeForm();
+}
+
+function closeForm() {
+    document.getElementById("popupForm").style.display = "none";
+    const project_title = document.getElementById("project_name");
+    const project_desc = document.getElementById("project_description");
+    
+    project_title.value = '';
+    project_desc.value = '';
+}
+
+export {openForm, addProject};

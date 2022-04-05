@@ -2,8 +2,16 @@ function sidebarComp() {
     //Creating the sidebar
     const sidebar = document.createElement('div');
     sidebar.classList.add("sidebar");
+
+    //creating Project title
+    let title =  document.createElement("h1");
+    title.setAttribute('id',`sidebar-title`);
+    title.innerHTML = "Projects";
+    sidebar.appendChild(title)
+
+    //creating Buttons
     const list = document.createElement('ul');
-    let data = ["Demo", "Projects"]
+    let data = ["+"]
 
 
     data.forEach((item) => {
