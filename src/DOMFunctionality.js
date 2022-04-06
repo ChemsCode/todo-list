@@ -1,3 +1,7 @@
+import {openFormTodo} from './todo_DOM';
+
+//add button of corresponding projec to sidebar
+
 function addProjectDOM(name){
     const list = document.getElementById("project-list");
     const newProj = document.createElement("li");
@@ -11,14 +15,20 @@ function addProjectDOM(name){
         while(main.firstChild){
             main.removeChild(main.firstChild);
         }
-        displayProjectMain(name)}); 
+        displayProjectMain(name)
+    }); 
 }
+
+//add button of coresponding project to main
 
 function displayProjectMain(projectName){
     const addTodoBtn = document.createElement("button");
     addTodoBtn.innerHTML = `Add ToDo for ${projectName}`;
     const main = document.getElementById("main");
     main.appendChild(addTodoBtn);
+    addTodoBtn.addEventListener("click", () => {
+        openFormTodo();
+    });
 
 }
 
