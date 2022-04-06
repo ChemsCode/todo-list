@@ -1,13 +1,15 @@
 import './style.css'
-import { sidebarComp } from './components/sidebar';
+import {sidebarComp} from './components/sidebar';
 import {openForm} from './todo_DOM';
-import {popupFormComp} from './components/popupForm'
+import {popupFormComp} from './components/popupForm';
+import {mainComp} from './components/main';
 
 function component() {
     const element = document.createElement('div');
     element.setAttribute('id','container');
     element.appendChild(sidebarComp());
-    element.appendChild(popupFormComp());
+    document.getElementById("content").appendChild(popupFormComp());
+    element.appendChild(mainComp());
     return element;
 }
  

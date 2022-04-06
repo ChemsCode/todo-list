@@ -75,7 +75,7 @@ body{
 }
 
 .sidebar #project-list button{
-    background: rgba(0, 0, 0, 0.1); /* black background with 0.1 opacity */
+    background: rgba(0, 0, 0, 0); /* black background with 0.1 opacity */
     border: none;
     color: white;
     padding: 0.01vh 2vh;
